@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TitleFragment">
+    tools:context=".TitleFragment"
+    >
 
 
     <Button
@@ -15,7 +16,7 @@
         android:layout_marginTop="434dp"
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="200dp"
-        android:text="Play"
+        android:text="@string/play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
