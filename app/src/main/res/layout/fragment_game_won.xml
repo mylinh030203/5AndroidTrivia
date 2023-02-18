@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameWonFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#95F499"
+    tools:context=".GameWonFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="404dp"
+        android:layout_height="286dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="328dp"
+        android:src="@drawable/congratulation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnnext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="123dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="157dp"
+        android:background="#CCD5D6"
+        android:backgroundTint="#B4B9BA"
+        android:text="Next Match"
+        android:textColor="#C6F693"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:rippleColor="#D8D0D0"
+        app:strokeColor="#A4A9AA" />
+</androidx.constraintlayout.widget.ConstraintLayout>
