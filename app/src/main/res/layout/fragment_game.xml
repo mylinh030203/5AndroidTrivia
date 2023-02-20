@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -44,25 +45,25 @@
             android:id="@+id/rbAnswer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{game.answers[1]}" />
+            android:text="@{currentQuestion.answers[0]}" />
 
         <RadioButton
             android:id="@+id/rbAnswer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@{currentQuestion.answers[1]}" />
 
         <RadioButton
             android:id="@+id/rbAnswer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@{currentQuestion.answers[2]}" />
 
         <RadioButton
             android:id="@+id/rbAnswer4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@{currentQuestion.answers[3]}" />
 
     </RadioGroup>
 
@@ -74,7 +75,7 @@
         android:layout_marginTop="163dp"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="19dp"
-        android:text="TextView"
+        android:text="@{currentQuestion.text}"
         app:layout_constraintBottom_toTopOf="@+id/rgChoice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

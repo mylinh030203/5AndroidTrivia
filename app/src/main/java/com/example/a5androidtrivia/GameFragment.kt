@@ -5,7 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
+import android.widget.RadioButton
+import android.widget.RadioGroup
+//import android.widget.RadioGroup
+import android.widget.TextView
+import androidx.navigation.findNavController
+
+//import androidx.appcompat.app.AppCompatActivity
+//import androidx.databinding.DataBindingUtil
+//import com.example.a5androidtrivia.databinding.FragmentGameBinding
 
 
 class GameFragment : Fragment() {
@@ -45,10 +54,56 @@ class GameFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view : View = inflater.inflate(R.layout.fragment_game, container, false)
         randomizeQuestions()
+         val view: View = inflater.inflate( R.layout.fragment_game, container,false)
+        view.findViewById<TextView>(R.id.tvQuestion).apply {
+            text = currentQuestion.text
+        }
+        view.findViewById<RadioButton>(R.id.rbAnswer1).apply {
+            text = currentQuestion.answers[0]
+        }
+        view.findViewById<RadioButton>(R.id.rbAnswer2).apply {
+            text = currentQuestion.answers[1]
+        }
+        view.findViewById<RadioButton>(R.id.rbAnswer3).apply {
+            text = currentQuestion.answers[2]
+        }
+        view.findViewById<RadioButton>(R.id.rbAnswer4).apply {
+            text = currentQuestion.answers[3]
+        }
+        view.findViewById<Button>(R.id.btnResult).setOnClickListener(object : View.OnClickListener{
 
-        return view
+
+            override fun onClick(v: View) {
+
+                var checked : Int = view.findViewById<RadioGroup>(R.id.rgChoice).checkedRadioButtonId
+                if(checked != -1){
+                    var answersIndex =0
+                    when(checked){
+                        R.id.rbAnswer1 -> answersIndex=0
+                        R.id.rbAnswer2 -> answersIndex=1
+                        R.id.rbAnswer3 -> answersIndex=2
+                        R.id.rbAnswer4 -> answersIndex=3
+                    }
+                    if(currentQuestion.answers[answersIndex] == currentQuestion.answers[0]){
+                        questionIndex++
+                        if(questionIndex<numQuestions){
+                            currentQuestion = question[questionIndex]
+                            setQuestion()
+                            view.invalidate()
+                        }else{
+                            v.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                        }
+                    }else{
+                        v.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
+                    }
+                }
+            }
+        })
+
+
+
+            return view
     }
 
     // randomize the questions and set the first question
@@ -68,5 +123,8 @@ class GameFragment : Fragment() {
         answers.shuffle()
 //        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.app_name, questionIndex + 1, numQuestions)
     }
+
+
+
 
 }
