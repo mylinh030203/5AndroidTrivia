@@ -10,6 +10,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 //import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 
 //import androidx.appcompat.app.AppCompatActivity
@@ -90,7 +91,7 @@ class GameFragment : Fragment() {
                         if(questionIndex<numQuestions){
                             currentQuestion = question[questionIndex]
                             setQuestion()
-                            v.findNavController()
+//                            v.findNavController()
 
                         }else{
                             v.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
@@ -122,7 +123,7 @@ class GameFragment : Fragment() {
         answers = currentQuestion.answers.toMutableList()
         // and shuffle them
         answers.shuffle()
-//        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.app_name, questionIndex + 1, numQuestions)
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
     }
 
 

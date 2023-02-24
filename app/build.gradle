@@ -7,6 +7,7 @@ android {
     namespace 'com.example.a5androidtrivia'
     compileSdk 33
 
+
     defaultConfig {
         applicationId "com.example.a5androidtrivia"
         minSdk 21
@@ -16,9 +17,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildFeatures {
-        viewBinding = true
-    }
+
 
     buildTypes {
         release {
@@ -47,4 +46,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    implementation "com.google.android.material:material:$version"
 }

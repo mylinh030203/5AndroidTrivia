@@ -1,13 +1,10 @@
 package com.example.a5androidtrivia
 
 import android.os.Bundle
-import android.view.*
 import androidx.fragment.app.Fragment
-import android.widget.Button
-import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
-
-//import androidx.navigation.findNavController
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [TitleFragment.newInstance] factory method to
+ * Use the [RulesFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class TitleFragment : Fragment() {
+class RulesFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,26 +33,8 @@ class TitleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_title, container, false)
-        var btnplay:Button = view.findViewById(R.id.btnPlay )
-        setHasOptionsMenu(true)
-        btnplay.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View) {
-                v.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
-            }
-
-        })
-        return view
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.option_menu,menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
-                ||super.onOptionsItemSelected(item)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_rules, container, false)
     }
 
     companion object {
@@ -65,12 +44,12 @@ class TitleFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment TitleFragment.
+         * @return A new instance of fragment RulesFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            TitleFragment().apply {
+            RulesFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
