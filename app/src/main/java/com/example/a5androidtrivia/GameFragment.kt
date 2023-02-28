@@ -12,6 +12,7 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 
 //import androidx.appcompat.app.AppCompatActivity
 //import androidx.databinding.DataBindingUtil
@@ -91,7 +92,7 @@ class GameFragment : Fragment() {
                         if(questionIndex<numQuestions){
                             currentQuestion = question[questionIndex]
                             setQuestion()
-//                            v.findNavController()
+                            v.invalidate()
 
                         }else{
                             v.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
