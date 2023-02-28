@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
 //        val binding : ViewDataBinding? = DataBindingUtil.setContentView(this, R.layout.activity_main)
         val navController  = this.findNavController(R.id.myNavHostFragment)
 
-        var navView : NavigationView = this.findViewById(R.id.myNavHostFragment)
-        NavigationUI.setupWithNavController(navView, navController)
+
+        NavigationUI.setupWithNavController(R.id.navView, navController)
         drawerLayout = findViewById(R.id.drawerLayout)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout )
 
